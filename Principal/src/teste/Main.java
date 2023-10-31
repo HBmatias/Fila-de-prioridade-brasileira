@@ -1,11 +1,12 @@
+package teste;
+import modelo.Parser;
+
 import java.io.File;
 public class Main {
-
-    public class Teste {
         public static void main(String args[]) {
 
             File file = new File("entrada.txt");
-            ListaDeEquipes parser = new ListaDeEquipes(file);
+            Parser parser = new Parser(file);
 
             while (parser.hasNext()) {
                 String line = parser.nextLine();
@@ -16,5 +17,5 @@ public class Main {
                 }
             }
         }
-    }
+
 }

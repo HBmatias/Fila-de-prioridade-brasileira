@@ -1,11 +1,12 @@
+package modelo;
 
 import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
-public class ListaDeEquipes {
+public class Parser {
         private Scanner leitor;
 
-        public ListaDeEquipes(File file) {
+        public Parser(File file) {
             try {
                 leitor = new Scanner(file);
             } catch (FileNotFoundException e) {
@@ -13,7 +14,7 @@ public class ListaDeEquipes {
             }
         }
 
-        public ListaDeEquipes(String input) {
+        public Parser(String input) {
             leitor = new Scanner(input);
         }
 
