@@ -1,21 +1,39 @@
 package run;
 
+// Import the class Parser from the package app.Config
 import app.Config.Parser;
 
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+// Import the class File from the package java.io
+import java.io.File;
+
+/**
+ * This class is responsible for running the project
+ * 
+ * @author José Iran Barbosa Fernandes Junior - RA: 822163632
+ * @author Nathan Ferreira Dos Reis - RA: 822156739
+ * @author Victor de Carvalho Araujo - RA: 822133651
+ * @author Henrique Brenner Alves Matias - RA: 822160817
+ * @author Enzo Silva Araújo - RA: 8222248346
+ * @author Guilherme Hais Dias - RA: 821137127
+ * @author Matheus Perez Brassarotto - RA: 821129320
+ */
 public class Main {
+
+    /**
+     * This method is responsible for running the project
+     * @param args
+     */
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        // Set message to show in console that the project is running
+        System.out.println("Running project FilaBrasileira!");
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        // Create a new instance of the Parser class
+        Parser parser = new Parser();
 
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
-        }
+        // Get the initial file
+        File file = new File("src\\main\\java\\run\\Codes\\import.txt");
+
+        // Call the method to parse the file
+        parser.read(file);
     }
 }

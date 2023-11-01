@@ -10,39 +10,51 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.File;
-public class Parser {
-    private Scanner leitor;
 
-    public String read(File file) {
-        String code = "";
+public class Parser {
+    /**
+     * This method is responsible for reading the file and parsing it
+     * 
+     * @param file - The file to be read
+     * @return Scanner
+     */
+    public Scanner read(File file) {
+        // Scanned file
+        Scanner scanner = null;
 
         try {
-            leitor = new Scanner(file);
+            scanner = new Scanner(file);
+
+            // Print in console the file content
+            while (this.hasNext(scanner)) {
+                System.out.println(this.nextLine(scanner));
+            }
         } catch (FileNotFoundException e) {
             System.out.println("File not found");
+            e.printStackTrace();
         }
 
-        return code;
+        return scanner;
     }
 
-    public boolean hasNext() {
-        return leitor.hasNext();
+    public boolean hasNext(Scanner scanner) {
+        return scanner.hasNext();
     }
 
-    public String nextLine() {
-        return leitor.nextLine();
+    public String nextLine(Scanner scanner) {
+        return scanner.nextLine();
     }
 
     public void readAndProcessHTML(File file) {
-        String html = read(file);
+        // leitor html = read(file);
 
-        Document doc = Jsoup.parse(html);
+        // Document doc = Jsoup.parse(html);
 
-        Elements elements = doc.getAllElements();
+        // Elements elements = doc.getAllElements();
 
-        for (Element element : elements) {
-            processElement(element);
-        }
+        // for (Element element : elements) {
+        // processElement(element);
+        // }
     }
 
     private void processElement(Element element) {
