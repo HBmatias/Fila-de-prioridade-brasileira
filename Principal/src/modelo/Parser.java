@@ -6,16 +6,16 @@ import java.io.FileNotFoundException;
 public class Parser {
         private Scanner leitor;
 
-        public Parser(File file) {
+        public String read(File file) {
+            String code = "";
+
             try {
                 leitor = new Scanner(file);
             } catch (FileNotFoundException e) {
                 System.out.println("File not found");
             }
-        }
 
-        public Parser(String input) {
-            leitor = new Scanner(input);
+            return code;
         }
 
         public boolean hasNext() {
