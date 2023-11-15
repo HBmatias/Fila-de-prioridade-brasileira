@@ -1,10 +1,11 @@
 package run;
 
 // Import the class Parser from the package app.Config
+
 import app.Config.Parser;
 
-// Import the class File from the package java.io
 import java.io.File;
+import java.util.Scanner;
 
 /**
  * This class is responsible for running the project
@@ -27,13 +28,49 @@ public class Main {
         // Set message to show in console that the project is running
         System.out.println("Running project FilaBrasileira!");
 
-        // Create a new instance of the Parser class
-        Parser parser = new Parser();
-
         // Get the initial file
         File file = new File("src\\main\\java\\run\\Codes\\import.txt");
+        // Create a new instance of the Parser class
+        Parser parser = new Parser(file);
+
 
         // Call the method to parse the file
-        parser.read(file);
+        String[] tokens = new String[1000];
+        int achou = 0;
+        Scanner leitor = new Scanner(System.in);
+        System.out.println("Digite o nome da pessoa que vc quer saber");
+        String nome = leitor.nextLine();
+
+        while (parser.hasNext()) {
+            String line = parser.nextLine();
+            tokens = line.split(" ");
+
+            System.out.println("Linha: " + line);
+            for (int i = 0; i < tokens.length; i++) {
+                System.out.println("token " + i + " " + tokens[i]);
+
+                if (tokens[i].equals(nome)) {
+                    achou = 2;
+                }
+            }
+
+        }
+
+        if(achou ==2){
+            System.out.println("\n" + nome + " existe");
+
+        }
+        else{
+            System.out.println("\n" + nome + " não existe");
+        }
+
+
+
+
+        System.out.println(tokens[0]);
+
+
+
+
     }
 }

@@ -4,44 +4,44 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-import java.io.File;
-
 public class Parser {
     /**
      * This method is responsible for reading the file and parsing it
-     * 
+     *
      * @param file - The file to be read
      * @return Scanner
      */
-    public Scanner read(File file) {
-        // Scanned file
-        Scanner scanner = null;
+    private Scanner leitor;
 
+
+    public Parser(File file) {
         try {
-            scanner = new Scanner(file);
-
-            // Print in console the file content
-            while (this.hasNext(scanner)) {
-                System.out.println(this.nextLine(scanner));
-            }
+            leitor = new Scanner(file);
         } catch (FileNotFoundException e) {
             System.out.println("File not found");
-            e.printStackTrace();
         }
-
-        return scanner;
     }
 
-    public boolean hasNext(Scanner scanner) {
-        return scanner.hasNext();
+    public Parser(String input) {
+        leitor = new Scanner(input);
     }
 
-    public String nextLine(Scanner scanner) {
-        return scanner.nextLine();
+    public boolean hasNext() {
+        return leitor.hasNext();
     }
 
+    public String nextLine() {
+        return leitor.nextLine();
+    }
 
-
+//    public String nomeNaoExiste(String nome,String[] tokens){
+//
+//    }
 
 
 }
+
+
+
+
+
