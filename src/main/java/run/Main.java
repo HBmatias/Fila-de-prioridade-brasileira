@@ -34,43 +34,78 @@ public class Main {
         Parser parser = new Parser(file);
 
 
-        // Call the method to parse the file
-        String[] tokens = new String[1000];
-        int achou = 0;
+
+        String[] tokens = new String[40];
+        int pos = 0;
+        int inicio = 0;
         Scanner leitor = new Scanner(System.in);
-        System.out.println("Digite o nome da pessoa que vc quer saber");
-        String nome = leitor.nextLine();
+       // System.out.println("Digite o nome da pessoa que vc quer saber");
+        String [] nome = new String[1000];
+        String[] grupos = new String[1000];
 
         while (parser.hasNext()) {
-            String line = parser.nextLine();
+            String line = parser.nextLine().replace(",", "");
             tokens = line.split(" ");
-
-            System.out.println("Linha: " + line);
-            for (int i = 0; i < tokens.length; i++) {
-                System.out.println("token " + i + " " + tokens[i]);
-
-                if (tokens[i].equals(nome)) {
-                    achou = 2;
-                }
+            if(line.startsWith("Grupo:")){
+                grupos[inicio] = line;
+                inicio++;
             }
 
+            System.out.println("Linha: " + line);
+
+            for (int i = 0; i < tokens.length; i++) {
+
+                if (tokens[0].equals("Existe:") ) {
+                    nome[pos] = tokens[i];
+                    pos++;
+
+                }
+//                else {
+//                    grupos[inicio] = tokens[i];
+//                    inicio++;
+//
+//                }
+
+            }
         }
+            for (int i = 0; i < grupos.length; i++) {
+                    if(grupos[i]== null ){
+                        continue;
+                    }
+                System.out.println("token " + i + " " + grupos[i]);
+                for (int x =0 ;x < nome.length; x++){
+                    if (nome[x]== null){
+                        continue;
+                    }
+                    System.out.println(nome[x]+ " " +
+                            parser.validaSeNomeExiste(grupos[i].split(" "), 1, nome[x]));
 
-        if(achou ==2){
-            System.out.println("\n" + nome + " existe");
-
-        }
-        else{
-            System.out.println("\n" + nome + " não existe");
-        }
+                }
 
 
 
+//                    System.out.println("funcionou");
+//                    i++;
+//                    if (tokens[i].equals("Ana")) {
+//                        achou = 2;
+//                        parser.nome(tokens[i]);
+//                    }
 
-        System.out.println(tokens[0]);
-
-
+            }
 
 
     }
+
+//        if(achou ==2){
+//            System.out.println("\n" + nome + " existe");
+//
+//        }
+//        else{
+//            System.out.println("\n" + nome + " não existe");
+//        }
+
+
+
+
 }
+

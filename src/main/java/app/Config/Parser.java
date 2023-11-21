@@ -20,6 +20,7 @@ public class Parser {
         } catch (FileNotFoundException e) {
             System.out.println("File not found");
         }
+
     }
 
     public Parser(String input) {
@@ -34,10 +35,20 @@ public class Parser {
         return leitor.nextLine();
     }
 
-//    public String nomeNaoExiste(String nome,String[] tokens){
-//
-//    }
 
+    public String validaSeNomeExiste(String tokens[], int inicio, String nome){
+        if (inicio < tokens.length){
+            if (nome.trim().equalsIgnoreCase(tokens[inicio].trim())){
+                return "15";
+            }
+            else {
+                return validaSeNomeExiste(tokens,inicio+1,nome);
+
+            }
+        }
+            return "0";
+
+    }
 
 }
 
