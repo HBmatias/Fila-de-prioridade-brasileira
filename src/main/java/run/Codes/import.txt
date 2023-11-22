@@ -1,3 +1,8 @@
-Grupo: Ana, Bia, Caio
-Grupo: Matheus, Gustavo, Sophia,
-Existe: Ana, Lucas, Nathan, Sophia, daniel
+Grupo: Ana Bia Guga Pedro
+Grupo: Joao Olga
+Grupo: Maria Manuel Alface
+Existe: Bia
+Existe: Banana
+Existe: joao
+Conhece: Maria Alface
+Conhece: Guga Olga
