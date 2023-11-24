@@ -36,50 +36,50 @@ public class Parser {
     public String nextLine() {
         return leitor.nextLine();
     }
-    public void conhecePessoa(String grupo[],String nome1,String nome2,int inicio){
-        if (inicio < grupo.length ) {
-            if (validaSeNomeExiste(grupo, inicio, nome1) == 1) {
-                if (validaSeNomeExiste(grupo, inicio, nome2) == 1) {
-                    System.out.println("[" + nome1 + "] CONHECE [" + nome2 + "]");
-                }
+//    public void conhecePessoa(String grupo[],String nome1,String nome2,int inicio){
+//        if (inicio < grupo.length ) {
+//            if (validaSeNomeExiste(grupo, inicio, nome1) == 1) {
+//                if (validaSeNomeExiste(grupo, inicio, nome2) == 1) {
+//                    System.out.println("[" + nome1 + "] CONHECE [" + nome2 + "]");
+//                }
+//            }
+//            else{
+//                System.out.println("[" + nome1 + "] NÃO CONHECE [" + nome2 + "]");
+//
+//            }
+//
+//
+//        }
+//
+//    }
+
+        String[] tokens = new String[100];
+    public void validaSeNomeExiste(String grupo[], String nome) {
+
+        for (int i = 0; i < grupo.length; i++) {
+            if (grupo[i] == null) {
+                continue;
             }
-            else{
-                System.out.println("[" + nome1 + "] NÃO CONHECE [" + nome2 + "]");
+
+            tokens = grupo[i].split(" ");
+
+
+
+        for (int inicio = 0; inicio < tokens.length; inicio++) {
+            if (tokens[inicio] == null) {
+                continue;
+            }
+
+            if (nome.trim().equalsIgnoreCase(tokens[inicio].trim())) {
+                System.out.println("existe" + nome);
+
 
             }
-
 
         }
-
-    }
-
-    public int validaSeNomeExiste(String grupo[], int inicio, String nome){
-        if (inicio < grupo.length ){
-            if (nome.trim().equalsIgnoreCase(grupo[inicio].trim())){
-
-                this.nomeJaExiste[pos] = nome;
-                pos++;
-
-                return  1;
-            }
-            else {
-                for (int i = 0; i< nomeJaExiste.length; i++){
-                    if(nomeJaExiste[i]== null ){
-                        continue;
-                    }
-                    if(nomeJaExiste[i].equals(nome)) {
-
-                        return 3;
-                    }
-                }
-
-                return validaSeNomeExiste(grupo,inicio+1,nome);
-
-            }
-
         }
+        System.out.println("NÃO" + nome);
 
-        return -1;
 
     }
 

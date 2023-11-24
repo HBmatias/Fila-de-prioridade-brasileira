@@ -47,13 +47,11 @@ public class Main {
         String conhece2 = null;
 
         while (parser.hasNext()) {
-            //
+            //kkkkkkkkkkkkkkk
             String line = parser.nextLine().replace(",", "");
-
 
             //quebra os
             tokens = line.split(" ");
-
             //Começa a ler o import.txt em grupo
             if(line.startsWith("Grupo:")){
 
@@ -73,24 +71,19 @@ public class Main {
 
                     }
                 }
-
-                //Começa a ler o import.txt em  "Conhece:"
-                if(line.startsWith("Conhece:")){
-                    // Insere tudo da linha texto que tiver "Conhece:" no vetor nome
-                    if (tokens[0].equals("Conhece:")){
-                        conhece1 = tokens[1];
-                        conhece2= tokens[2];
-                        parser.conhecePessoa(grupos[i].split(" "),conhece1,conhece2,1);
-
-                    }
-
-                }
+                //
+//                if (tokens[0].equals("Conhece:")){
+//                    conhece1 = tokens[1];
+//                    conhece2= tokens[2];
+//                    parser.conhecePessoa(grupos[i].split(" "),conhece1,conhece2,1);
+//
+//                }
 
             }
         }
         int fila = 1;
 
-        for (int x = 0 ;x < grupos.length; x++){
+        for (int x = 0 ;x < nome.length; x++){
 
             // ignora os null's no vetor grupo
             if (nome[x]== null){
@@ -99,25 +92,12 @@ public class Main {
             System.out.println();
             System.out.println("Fila " + fila++ + " " + "[" + grupos[x] + "]");
 
-            for (int i = 0; i < grupos.length; i++) {
-                // ignora os null's no vetor grupo
-                if(grupos[i]== null ){
-                    continue;
-                }
+
                 //método  que valia se nome existe e returna um inteiro
-                achou = parser.validaSeNomeExiste(grupos[i].split(" "), 1, nome[x]);
 
-                if (achou == 1) {
-                    System.out.println("["+nome[x]+"]" + " EXISTE!"
-                    );
-                }
-                if(achou == -1){
-                    System.out.println("["+nome[x]+"]" + "NÃO Existe!"
-                    );
+                 parser.validaSeNomeExiste(grupos, nome[x]);
 
-                }
 
-            }
 
         }
 
