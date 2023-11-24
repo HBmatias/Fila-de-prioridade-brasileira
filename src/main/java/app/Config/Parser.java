@@ -43,23 +43,22 @@ public class Parser {
                     System.out.println("[" + nome1 + "] CONHECE [" + nome2 + "]");
                 }
             }
-                else{
-                    System.out.println("[" + nome1 + "] NÃO CONHECE [" + nome2 + "]");
+            else{
+                System.out.println("[" + nome1 + "] NÃO CONHECE [" + nome2 + "]");
 
-                }
+            }
 
 
         }
 
     }
 
-
     public int validaSeNomeExiste(String grupo[], int inicio, String nome){
         if (inicio < grupo.length ){
             if (nome.trim().equalsIgnoreCase(grupo[inicio].trim())){
 
                 this.nomeJaExiste[pos] = nome;
-                        pos++;
+                pos++;
 
                 return  1;
             }
@@ -86,7 +85,6 @@ public class Parser {
 
 
 }
-
 
 
 
