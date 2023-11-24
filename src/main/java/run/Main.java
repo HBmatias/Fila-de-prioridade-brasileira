@@ -72,12 +72,11 @@ public class Main {
                     }
                 }
                 //
-//                if (tokens[0].equals("Conhece:")){
-//                    conhece1 = tokens[1];
-//                    conhece2= tokens[2];
-//                    parser.conhecePessoa(grupos[i].split(" "),conhece1,conhece2,1);
-//
-//                }
+                if (tokens[0].equals("Conhece:")){
+                    conhece1 = tokens[1];
+                    conhece2= tokens[2];
+
+                }
 
             }
         }
@@ -90,12 +89,14 @@ public class Main {
                 continue;
             }
             System.out.println();
-            System.out.println("Fila " + fila++ + " " + "[" + grupos[x] + "]");
+
 
 
                 //método  que valia se nome existe e returna um inteiro
 
                  parser.validaSeNomeExiste(grupos, nome[x]);
+                // parser.conhecePessoa(grupos,conhece1,conhece2,1);
+
 
 
 

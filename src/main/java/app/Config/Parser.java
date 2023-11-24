@@ -2,6 +2,7 @@ package app.Config;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Parser {
@@ -14,6 +15,9 @@ public class Parser {
     private Scanner leitor;
     private String[] nomeJaExiste = new String[100];
     int pos= 0;
+
+    private boolean nomeEncontrado = true;
+    private boolean achou =  false;
 
 
     public Parser(File file) {
@@ -38,8 +42,8 @@ public class Parser {
     }
 //    public void conhecePessoa(String grupo[],String nome1,String nome2,int inicio){
 //        if (inicio < grupo.length ) {
-//            if (validaSeNomeExiste(grupo, inicio, nome1) == 1) {
-//                if (validaSeNomeExiste(grupo, inicio, nome2) == 1) {
+//            if (validaSeNomeExiste(grupo, nome1) == 1) {
+//                if (validaSeNomeExiste(grupo, nome2) == 1) {
 //                    System.out.println("[" + nome1 + "] CONHECE [" + nome2 + "]");
 //                }
 //            }
@@ -54,7 +58,7 @@ public class Parser {
 //    }
 
         String[] tokens = new String[100];
-    public void validaSeNomeExiste(String grupo[], String nome) {
+    public int validaSeNomeExiste(String grupo[], String nome) {
 
         for (int i = 0; i < grupo.length; i++) {
             if (grupo[i] == null) {
@@ -63,23 +67,22 @@ public class Parser {
 
             tokens = grupo[i].split(" ");
 
+            for (int inicio = 0; inicio < tokens.length; inicio++) {
+                if (tokens[inicio] == null) {
+                    continue;
+                }
 
-
-        for (int inicio = 0; inicio < tokens.length; inicio++) {
-            if (tokens[inicio] == null) {
-                continue;
+                if (nome.trim().equalsIgnoreCase(tokens[inicio])) {
+                    System.out.println("["+nome+"]" + "Existe");
+                        return 1;
+                }
             }
 
-            if (nome.trim().equalsIgnoreCase(tokens[inicio].trim())) {
-                System.out.println("existe" + nome);
 
-
-            }
 
         }
-        }
-        System.out.println("NÃO" + nome);
-
+        System.out.println("["+nome+"]" + " NÃO EXISTE");
+        return -1;
 
     }
 
