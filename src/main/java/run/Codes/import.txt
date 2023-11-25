@@ -2,7 +2,7 @@ Grupo: Ana Bia Guga Pedro
 Grupo: Joao Olga
 Grupo: Maria Manuel Alface
 Existe: Bia
-Existe: Banana, Manuel
+Existe: Banana,
 Existe: joao
 Conhece: Maria Alface
 Conhece: Guga Olga

@@ -5,6 +5,8 @@ package run;
 import app.Config.Parser;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -22,6 +24,7 @@ public class Main {
 
     /**
      * This method is responsible for running the project
+     *
      * @param args
      */
     public static void main(String[] args) {
@@ -34,14 +37,13 @@ public class Main {
         Parser parser = new Parser(file);
 
 
-
-        String[] tokens = new String[1000];
+        List tokens = new ArrayList();
         int achou;
         int pos = 0;
         int inicio = 0;
 
 
-        String [] nome = new String[1000];
+        String[] nome = new String[1000];
         String[] grupos = new String[1000];
         String conhece1 = null;
         String conhece2 = null;
@@ -51,37 +53,42 @@ public class Main {
             String line = parser.nextLine().replace(",", "");
 
             //quebra os
-            tokens = line.split(" ");
+            tokens = List.of(line.split(" "));
             //Começa a ler o import.txt em grupo
-            if(line.startsWith("Grupo:")){
+            if (line.startsWith("Grupo:")) {
 
                 grupos[inicio] = line;
                 inicio++;
             }
 
 
-            for (int i = 1; i < tokens.length; i++) {
-                //Começa a ler o import.txt em  "Existe:"
-                if(line.startsWith("Existe:")){
-                    // Insere tudo da linha texto que tiver "Existe:" no vetor nome
-                    if (tokens[0].equals("Existe:")){
 
-                        nome[pos] = tokens[i];
+
+            for (int i = 1; i < tokens.size(); i++) {
+                //Começa a ler o import.txt em  "Existe:"
+                if (line.startsWith("Existe:")) {
+                    // Insere tudo da linha texto que tiver "Existe:" no vetor nome
+                    if (tokens.get(0).equals("Existe:")) {
+
+                        nome[pos] = (String) tokens.get(i);
                         pos++;
 
                     }
                 }
-                //
-                if (tokens[0].equals("Conhece:")){
-                    conhece1 = tokens[1];
-                    conhece2= tokens[2];
-
-                }
 
             }
-        }
-        int fila = 1;
+            if (line.startsWith("Conhece:")) {
+                if (tokens.get(0).equals("Conhece:")) {
+                    conhece1 = (String) tokens.get(1);
+                    conhece2 = tokens.get(2).toString();
+                    if (parser.conhecePessoa(grupos, conhece1, conhece2))
+                        System.out.println("[" + conhece1 + " CONHECE " + conhece2 + "]");
+                    else
+                        System.out.println("[" + conhece1 + " NÃO SE CONHECEM " + conhece2 + "]");
 
+                }
+            }
+        }
         for (int x = 0 ;x < nome.length; x++){
 
             // ignora os null's no vetor grupo
@@ -92,15 +99,14 @@ public class Main {
 
 
 
-                //método  que valia se nome existe e returna um inteiro
 
-                 parser.validaSeNomeExiste(grupos, nome[x]);
-                // parser.conhecePessoa(grupos,conhece1,conhece2,1);
-
-
-
-
+            if (parser.validaSeNomeExiste(grupos, nome[x]))
+                System.out.println("["+nome[x]+"]" + "Existe");
+            else
+                System.out.println("["+nome[x]+"]" + " NÃO EXISTE");
         }
-
     }
+
+
 }
+
