@@ -61,9 +61,6 @@ public class Main {
                 inicio++;
             }
 
-
-
-
             for (int i = 1; i < tokens.size(); i++) {
                 //Começa a ler o import.txt em  "Existe:"
                 if (line.startsWith("Existe:")) {
@@ -71,8 +68,17 @@ public class Main {
                     if (tokens.get(0).equals("Existe:")) {
 
                         nome[pos] = (String) tokens.get(i);
-                        pos++;
 
+                        if (nome[pos]== null){
+                            continue;
+                        }
+                        System.out.println();
+
+                        if (parser.validaSeNomeExiste(grupos, nome[pos]))
+                            System.out.println("["+nome[pos]+"]" + "Existe");
+                        else
+                            System.out.println("["+nome[pos]+"]" + " NÃO EXISTE");
+                        pos++;
                     }
                 }
 
@@ -81,32 +87,16 @@ public class Main {
                 if (tokens.get(0).equals("Conhece:")) {
                     conhece1 = (String) tokens.get(1);
                     conhece2 = tokens.get(2).toString();
+                    System.out.println();
                     if (parser.conhecePessoa(grupos, conhece1, conhece2))
-                        System.out.println("[" + conhece1 + " CONHECE " + conhece2 + "]");
+                        System.out.println("[" + conhece1 + "] CONHECE [" + conhece2 + "]");
                     else
-                        System.out.println("[" + conhece1 + " NÃO SE CONHECEM " + conhece2 + "]");
+                        System.out.println("[" + conhece1 + "] NÃO CONHECE [" + conhece2 + "]");
 
                 }
             }
         }
-        for (int x = 0 ;x < nome.length; x++){
 
-            // ignora os null's no vetor grupo
-            if (nome[x]== null){
-                continue;
-            }
-            System.out.println();
-
-
-
-
-            if (parser.validaSeNomeExiste(grupos, nome[x]))
-                System.out.println("["+nome[x]+"]" + "Existe");
-            else
-                System.out.println("["+nome[x]+"]" + " NÃO EXISTE");
-        }
     }
-
-
 }
 

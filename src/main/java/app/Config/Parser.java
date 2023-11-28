@@ -52,7 +52,7 @@ public class Parser {
                 if (tokens[inicio].contains(nome1)) {
 
                     for (int x = 0; x < tokens.length; x++) {
-                        if (tokens[x].contains(nome2)) {
+                        if (tokens[x].contains(nome2)){
                             return true;
                         }
                     }
@@ -63,11 +63,7 @@ public class Parser {
         }
             return false;
 
-
-
     }
-
-
 
 
     public boolean validaSeNomeExiste(String grupo[], String nome) {
@@ -90,8 +86,6 @@ public class Parser {
                         return true;
                 }
             }
-
-
 
         }
 
