@@ -44,7 +44,7 @@ public class Parser {
 
             tokens = grupo[i].split(" ");
 
-            for (int inicio = 0; inicio < tokens.length; inicio++) {
+            for (int inicio = 0; inicio < tokens.length; inicio++){
                 if (tokens[inicio] == null) {
                     continue;
                 }
@@ -57,12 +57,9 @@ public class Parser {
                         }
                     }
                 }
-
             }
-
         }
             return false;
-
     }
 
 

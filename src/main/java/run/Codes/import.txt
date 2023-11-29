@@ -1,4 +1,4 @@
-Grupo: Ana Bia Guga Pedro
+Grupo: Ana, Bia, Guga, Pedro
 Grupo: Joao Olga
 Grupo: Maria Manuel Alface
 Existe: Bia
@@ -7,4 +7,5 @@ Existe: joao
 Conhece: Maria Alface
 Conhece: Guga Olga
 Conhece: Ana Pedro
-criaFila:
+criaFila: #guiche1
+Chegou: Ivo, Fabio, Manuel, Alface

@@ -2,12 +2,11 @@ package run;
 
 // Import the class Parser from the package app.Config
 
+import app.Config.ListaEncadeada;
 import app.Config.Parser;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.Arrays;
 
 /**
  * This class is responsible for running the project
@@ -37,37 +36,38 @@ public class Main {
         Parser parser = new Parser(file);
 
 
-        List tokens = new ArrayList();
-        int achou;
+        String[] tokens = new String[1000];
         int pos = 0;
         int inicio = 0;
+        int x= 1;
 
-
+        String[] guiche = new String[5];
         String[] nome = new String[1000];
         String[] grupos = new String[1000];
-        String conhece1 = null;
-        String conhece2 = null;
+        String conhece1;
+        String conhece2;
+        ListaEncadeada fila = new ListaEncadeada();
 
         while (parser.hasNext()) {
-            //kkkkkkkkkkkkkkk
+
             String line = parser.nextLine().replace(",", "");
 
-            //quebra os
-            tokens = List.of(line.split(" "));
-            //Começa a ler o import.txt em grupo
+
+            tokens = line.split(" ");
+
             if (line.startsWith("Grupo:")) {
 
                 grupos[inicio] = line;
                 inicio++;
             }
 
-            for (int i = 1; i < tokens.size(); i++) {
+            for (int i = 1; i < tokens.length; i++) {
                 //Começa a ler o import.txt em  "Existe:"
                 if (line.startsWith("Existe:")) {
                     // Insere tudo da linha texto que tiver "Existe:" no vetor nome
-                    if (tokens.get(0).equals("Existe:")) {
+                    if (tokens[0].equals("Existe:")) {
 
-                        nome[pos] = (String) tokens.get(i);
+                        nome[pos] = (String) tokens[i];
 
                         if (nome[pos]== null){
                             continue;
@@ -84,9 +84,9 @@ public class Main {
 
             }
             if (line.startsWith("Conhece:")) {
-                if (tokens.get(0).equals("Conhece:")) {
-                    conhece1 = (String) tokens.get(1);
-                    conhece2 = tokens.get(2).toString();
+                if (tokens[0].equals("Conhece:")) {
+                    conhece1 = tokens[1];
+                    conhece2 = tokens[2];
                     System.out.println();
                     if (parser.conhecePessoa(grupos, conhece1, conhece2))
                         System.out.println("[" + conhece1 + "] CONHECE [" + conhece2 + "]");
@@ -95,7 +95,26 @@ public class Main {
 
                 }
             }
-        }
+
+            for (int i = 1; i < tokens.length; i++) {
+                if (line.startsWith("criaFila:") || line.startsWith("Chegou:")) {
+                    if (tokens[0].equals("Chegou:")) {
+
+                        guiche[i] = tokens[i];
+                        fila.criaFila(guiche[1]);
+                        fila.criaFila(guiche[2]);
+
+
+                    }
+                }
+
+
+                System.out.println(fila);
+
+
+            }
+
+            }
 
     }
 }
