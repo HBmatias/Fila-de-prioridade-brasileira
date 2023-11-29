@@ -39,7 +39,7 @@ public class Main {
         String[] tokens = new String[1000];
         int pos = 0;
         int inicio = 0;
-        int x= 1;
+        int x= 0;
 
         String[] guiche = new String[5];
         String[] nome = new String[1000];
@@ -96,25 +96,30 @@ public class Main {
                 }
             }
 
-            for (int i = 1; i < tokens.length; i++) {
-                if (line.startsWith("criaFila:") || line.startsWith("Chegou:")) {
-                    if (tokens[0].equals("Chegou:")) {
 
-                        guiche[i] = tokens[i];
-                        fila.criaFila(guiche[1]);
-                        fila.criaFila(guiche[2]);
+            if (line.startsWith("criaFila:") || line.startsWith("Chegou:")) {
+                if (tokens[0].equals("Chegou:")) {
 
+                    guiche[x] = tokens[x];
+                    x++;
 
-                    }
+                fila.criaFila(tokens[1]);
+                fila.criaFila(tokens[2]);
+                fila.criaFila(tokens[3]);
+                fila.criaFila(tokens[4]);
+
                 }
-
-
-                System.out.println(fila);
-
-
             }
 
-            }
+
+
+
+
+
+        }
+
+
+            System.out.println(fila + " " + fila.getTamanho());
 
     }
 }
