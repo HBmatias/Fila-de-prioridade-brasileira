@@ -2,11 +2,12 @@ package run;
 
 // Import the class Parser from the package app.Config
 
-import app.Config.ListaEncadeada;
+import app.Config.ControleGuiche;
+import app.Config.Guiche;
 import app.Config.Parser;
 
 import java.io.File;
-import java.util.Arrays;
+import java.util.ArrayList;
 
 /**
  * This class is responsible for running the project
@@ -39,19 +40,17 @@ public class Main {
         String[] tokens = new String[1000];
         int pos = 0;
         int inicio = 0;
-        int x= 0;
 
-        String[] guiche = new String[5];
+
         String[] nome = new String[1000];
         String[] grupos = new String[1000];
         String conhece1;
         String conhece2;
-        ListaEncadeada fila = new ListaEncadeada();
+        ControleGuiche controle = new ControleGuiche();
 
         while (parser.hasNext()) {
 
             String line = parser.nextLine().replace(",", "");
-
 
             tokens = line.split(" ");
 
@@ -69,15 +68,15 @@ public class Main {
 
                         nome[pos] = (String) tokens[i];
 
-                        if (nome[pos]== null){
+                        if (nome[pos] == null) {
                             continue;
                         }
                         System.out.println();
 
                         if (parser.validaSeNomeExiste(grupos, nome[pos]))
-                            System.out.println("["+nome[pos]+"]" + "Existe");
+                            System.out.println("[" + nome[pos] + "]" + "Existe");
                         else
-                            System.out.println("["+nome[pos]+"]" + " NÃO EXISTE");
+                            System.out.println("[" + nome[pos] + "]" + " NÃO EXISTE");
                         pos++;
                     }
                 }
@@ -96,31 +95,21 @@ public class Main {
                 }
             }
 
-
-            if (line.startsWith("criaFila:") || line.startsWith("Chegou:")) {
-                if (tokens[0].equals("Chegou:")) {
-
-                    guiche[x] = tokens[x];
-                    x++;
-
-                fila.criaFila(tokens[1]);
-                fila.criaFila(tokens[2]);
-                fila.criaFila(tokens[3]);
-                fila.criaFila(tokens[4]);
-
+            if (line.startsWith("criaFila:")) {
+                for (int x = 1; x < tokens.length; x++) {
+                    controle.adiciona(tokens[x]);
                 }
             }
 
-
-
-
-
+            if (line.startsWith("Chegou:")) {
+                for (int v = 1; v< tokens.length; v++){
+                 Guiche menorfila = controle.menorGuiche();
+                 menorfila.adiciona(tokens[v]);
+                }
+            }
 
         }
-
-
-            System.out.println(fila + " " + fila.getTamanho());
-
+            controle.imprimeGuiche();
     }
 }
 

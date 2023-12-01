@@ -7,5 +7,7 @@ Existe: joao
 Conhece: Maria Alface
 Conhece: Guga Olga
 Conhece: Ana Pedro
-criaFila: #guiche1
+criaFila: guiche1
 Chegou: Ivo, Fabio, Manuel, Alface
+criaFila: guiche2
+Chegou: naruto, sasuke, sakura, kakashi

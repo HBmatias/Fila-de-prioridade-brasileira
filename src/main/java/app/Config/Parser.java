@@ -49,10 +49,10 @@ public class Parser {
                     continue;
                 }
 
-                if (tokens[inicio].contains(nome1)) {
+                if (tokens[inicio].equals(nome1)) {
 
                     for (int x = 0; x < tokens.length; x++) {
-                        if (tokens[x].contains(nome2)){
+                        if (tokens[x].equals(nome2)){
                             return true;
                         }
                     }
