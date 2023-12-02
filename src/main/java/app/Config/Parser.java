@@ -14,6 +14,9 @@ public class Parser {
      */
     private Scanner leitor;
 
+
+
+
     public Parser(File file) {
         try {
             leitor = new Scanner(file);
@@ -23,9 +26,13 @@ public class Parser {
 
     }
 
+    public Parser(){
+
+    }
     public Parser(String input) {
         leitor = new Scanner(input);
     }
+
 
     public boolean hasNext() {
         return leitor.hasNext();
@@ -43,6 +50,9 @@ public class Parser {
             String[] tokens = new String[100];
 
             tokens = grupo[i].split(" ");
+            if(nome1.equals(nome2)){
+                continue;
+            }
 
             for (int inicio = 0; inicio < tokens.length; inicio++){
                 if (tokens[inicio] == null) {

@@ -1,6 +1,6 @@
 Grupo: Ana, Bia, Guga, Pedro
 Grupo: Joao Olga
-Grupo: Maria Manuel Alface
+Grupo: Maria Manuel Ivo Fabio
 Existe: Bia
 Existe: Banana
 Existe: joao
@@ -8,6 +8,6 @@ Conhece: Maria Alface
 Conhece: Guga Olga
 Conhece: Ana Pedro
 criaFila: guiche1
-Chegou: Ivo, Fabio, Manuel, Alface
+Chegou: Ivo, Fabio, Manuel, link, igor, Alface,
 criaFila: guiche2
-Chegou: naruto, sasuke, sakura, kakashi
+Chegou: Zoro Luffy Zelda naruto, sasuke, sakura, kakashi

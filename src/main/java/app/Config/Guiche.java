@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Guiche {
     private ArrayList<String> lista;
     private  String id;
+
     public Guiche(String id){
         lista = new ArrayList<>();
         this.id = id;
@@ -20,6 +21,8 @@ public class Guiche {
         System.out.println("#" + id +" "+lista);
     }
 
-
+    public ArrayList<String> getLista() {
+        return lista;
+    }
 
 }

@@ -103,11 +103,10 @@ public class Main {
 
             if (line.startsWith("Chegou:")) {
                 for (int v = 1; v< tokens.length; v++){
-                 Guiche menorfila = controle.menorGuiche();
-                 menorfila.adiciona(tokens[v]);
+                    controle.chegou(tokens[v],grupos);
+
                 }
             }
-
         }
             controle.imprimeGuiche();
     }
