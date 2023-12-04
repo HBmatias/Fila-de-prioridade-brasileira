@@ -80,7 +80,6 @@ public class Main {
                         pos++;
                     }
                 }
-
             }
 
             if (line.startsWith("Conhece:")) {

@@ -22,11 +22,9 @@ public class Guiche {
     public void imprime(){
         System.out.println("#" + id +" "+lista);
     }
-
     public ArrayList<String> getLista() {
         return lista;
     }
-
     public String getId() {
         return id;
     }

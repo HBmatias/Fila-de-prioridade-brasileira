@@ -2,33 +2,38 @@
 
 Este projeto tem como intuito desenvolver um modelo de gerenciamento de filas utilizando de códigos "externos".
 
-**Boas Práticas**
-
-Tendo em vista a manutenção e desenvolvimento deste código por outros desenvolvedores, é importante que sejam seguidas algumas boas práticas de programação.
-
 ## Estrutura de Pastas
 
 ### Package: run
 
-> Arquivos necessários para inicialização do sistema
+> Arquivos necessários para inicialização do sistema.
 
-- `Main.java` - Arquivo principal do sistema, onde inicia-se o processo de ação do sistema;
-- `MainTest.java` - Arquivo de testes do sistema, onde são testadas as funcionalidades do sistema;
+- `Main.java` - Classe principal do sistema executa o projeto. Ela processa os comandos e 
+realiza as operações correspondentes.
 
-#### Package: Codes
+
+### Package: Codes
   
-  - Package onde são inseridos os códigos de inserção de dados no sistema;
+> Package onde são inseridos os códigos de inserção de dados no sistema.
 
-### Package: app
+- `import.txt` Arquivo de entrada do sistema.
 
-> Onde o sistema é propriamente desenvolvido, compreende todas as funcionalidades do sistema
+### Package: app.Config
 
-#### Package: Config
+> Onde o sistema é propriamente desenvolvido, compreende todas as funcionalidades do sistema 
+ e onde se tem os arquivos de configuração do sistema.
 
-- Arquivos de configuração do sistema 
+- `Parser.java` - Classe responsável por ler o arquivo de texto, verifica se uma pessoa
+existe em algum grupo ou se duas pessoas se conhecem no mesmo grupo.
 
-#### Package: View
-  
-- Os arquivos html para visualização de funcionalidades devem ser gerados nesse Package;
-- Deve ter como regra a separação e organização dos arquivos html em subpastas do package em questão:
-  - **Exemplo:** Arquivos html padrão são criados dentro de `View.layout`;
+
+- `Guiche.java` - Esta classe representa uma fila(ou guichê). Ela mantém uma 
+lista de pessoas na fila e fornece métodos para adicionar e remover pessoas da fila, bem
+como obter o tamanho da fila e imprimir a fila.
+
+
+- `ControleGuiche` - Classe responsável por controlar várias filas. Ela mantém 
+uma lista de pessoas, garante que pessoas furem a fila caso se conheçam 
+e fornece métodos para adicionar filas, atender fila, adicionar pessoas
+às filas e imprimir todas as filas.
+

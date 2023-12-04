@@ -27,7 +27,6 @@ public class Parser {
     public boolean hasNext() {
         return leitor.hasNext();
     }
-
     public String nextLine() {
         return leitor.nextLine();
     }
@@ -70,7 +69,7 @@ public class Parser {
             if (grupo[i] == null) {
                 continue;
             }
-        String[] tokens = new String[100];
+        String[] tokens = new String[1000];
 
             tokens = grupo[i].split(" ");
 
@@ -78,9 +77,7 @@ public class Parser {
                 if (tokens[inicio] == null) {
                     continue;
                 }
-
                 if (nome.trim().equalsIgnoreCase(tokens[inicio])) {
-
                         return true;
                 }
             }
