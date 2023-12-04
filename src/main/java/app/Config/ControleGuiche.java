@@ -21,9 +21,7 @@ public class ControleGuiche{
                     return;
                 }
             }
-
         }
-
     }
     public void desiste(String nome){
         for (int x = 0; x<controle.size(); x++) {
@@ -36,7 +34,6 @@ public class ControleGuiche{
                 }
             }
         }
-
     }
     public void chegou(String nome, String[] grupos ){
         Guiche menorfila = null;

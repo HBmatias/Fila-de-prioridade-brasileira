@@ -36,4 +36,3 @@ como obter o tamanho da fila e imprimir a fila.
 uma lista de pessoas, garante que pessoas furem a fila caso se conheçam 
 e fornece métodos para adicionar filas, atender fila, adicionar pessoas
 às filas e imprimir todas as filas.
-
