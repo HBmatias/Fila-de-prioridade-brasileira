@@ -82,6 +82,7 @@ public class Main {
                 }
 
             }
+
             if (line.startsWith("Conhece:")) {
                 if (tokens[0].equals("Conhece:")) {
                     conhece1 = tokens[1];
@@ -105,6 +106,16 @@ public class Main {
                 for (int v = 1; v< tokens.length; v++){
                     controle.chegou(tokens[v],grupos);
 
+                }
+            }
+            if(line.startsWith("Desiste:")){
+                for (int y = 1; y < tokens.length; y++){
+                    controle.desiste(tokens[y]);
+                }
+            }
+            if(line.startsWith("AtendeFila:")){
+                for (int j = 1; j < tokens.length; j++){
+                    controle.atendeFila(tokens[j]);
                 }
             }
         }

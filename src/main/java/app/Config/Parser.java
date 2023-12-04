@@ -14,26 +14,16 @@ public class Parser {
      */
     private Scanner leitor;
 
-
-
-
     public Parser(File file) {
         try {
             leitor = new Scanner(file);
         } catch (FileNotFoundException e) {
             System.out.println("File not found");
         }
-
     }
 
     public Parser(){
-
     }
-    public Parser(String input) {
-        leitor = new Scanner(input);
-    }
-
-
     public boolean hasNext() {
         return leitor.hasNext();
     }
@@ -44,9 +34,11 @@ public class Parser {
     public Boolean conhecePessoa(String grupo[],String nome1,String nome2){
 
         for (int i = 0; i < grupo.length; i++) {
+
             if (grupo[i] == null) {
                 continue;
             }
+
             String[] tokens = new String[100];
 
             tokens = grupo[i].split(" ");
@@ -69,9 +61,8 @@ public class Parser {
                 }
             }
         }
-            return false;
+        return false;
     }
-
 
     public boolean validaSeNomeExiste(String grupo[], String nome) {
 
@@ -93,14 +84,9 @@ public class Parser {
                         return true;
                 }
             }
-
         }
-
         return false;
-
     }
-
-
 }
 
 

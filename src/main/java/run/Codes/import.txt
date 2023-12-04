@@ -11,3 +11,5 @@ criaFila: guiche1
 Chegou: Ivo, Fabio, Manuel, link, igor, Alface,
 criaFila: guiche2
 Chegou: Zoro Luffy Zelda naruto, sasuke, sakura, kakashi
+AtendeFila: guiche1, guiche1
+Desiste: naruto

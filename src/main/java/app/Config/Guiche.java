@@ -12,7 +12,9 @@ public class Guiche {
     }
     public void adiciona(String nome){
         lista.add(nome);
-
+    }
+    public void remove(int posicao){
+        lista.remove(posicao);
     }
     public int tamanho(){
         return lista.size();
@@ -25,4 +27,7 @@ public class Guiche {
         return lista;
     }
 
+    public String getId() {
+        return id;
+    }
 }
