@@ -67,7 +67,8 @@ public class ControleGuiche{
             Guiche guiche =  controle.get(x);
             for (int a = 0; a<guiche.getLista().size();a++){
                 if (nome.equalsIgnoreCase(guiche.getLista().get(a))){
-                    guiche.getLista().remove(a);
+                    guiche.remove(a);
+                    return;
 
                 }
             }
@@ -113,7 +114,6 @@ public class ControleGuiche{
                     // System.out.println(nome +" " + a);
 
                 }
-
             }
         }
 
