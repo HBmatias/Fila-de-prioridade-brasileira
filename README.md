@@ -32,4 +32,3 @@ Tendo em vista a manutenção e desenvolvimento deste código por outros desenvo
 - Os arquivos html para visualização de funcionalidades devem ser gerados nesse Package;
 - Deve ter como regra a separação e organização dos arquivos html em subpastas do package em questão:
   - **Exemplo:** Arquivos html padrão são criados dentro de `View.layout`;
- <iframe width="560" height="315" src="https://www.youtube.com/embed/ctWWkQJRhc4?si=oXcbJnwvvwajX_tU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
