@@ -1,15 +1,15 @@
-Grupo: Ana, Bia, Guga, Pedro
-Grupo: Joao Olga
-Grupo: Maria Manuel Ivo Fabio
-Existe: Bia
-Existe: Banana
-Existe: joao
-Conhece: Maria Alface
-Conhece: Guga Olga
-Conhece: Ana Pedro
+Grupo: Homer Marge Lisa Bart
+Grupo: Harry Hermione Ron
+Grupo: Clank Bruce Diana
+Existe: Peter
+Existe: Lisa
+Existe: Diana
+Conhece: Homer Marge
+Conhece: Hermione Diana
+Conhece: Clank Bruce
 criaFila: guiche1
-Chegou: Ivo, Fabio, Manuel, link, igor, Alface,
+Chegou: Luke Ivo Clank Diana Link Igor Alface Bruce Lisa
 criaFila: guiche2
-Chegou: Zoro Luffy Zelda naruto, sasuke, sakura, kakashi
-AtendeFila: guiche1, guiche1
-Desiste: naruto,
+Chegou: Yoda Han Homer Zelda Nemo Harry Daniel Lucas Ron Bart
+AtendeFila: guiche1 guiche2 guiche2
+Desiste: Nemo
